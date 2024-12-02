@@ -48,8 +48,8 @@ function custom_comment_callback( $comment, $args, $depth ) {
   <?php 
         comment_form( array(
             'title_reply' => __( 'Add Review', 'textdomain' ),
-            'label_submit' => __( 'Post Comment', 'textdomain' ),
-            'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __( 'Comment', 'textdomain' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8"></textarea></p>',
+            'label_submit' => __( 'Post Review', 'textdomain' ),
+            'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __( 'Your Honest Review', 'textdomain' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8"></textarea></p>',
             'fields' => array(
             'author' => '<p class="comment-form-author"><label for="author">' . __( 'Name', 'textdomain' ) . '</label><input id="author" name="author" type="text" value="" size="30" /></p>',
             'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'textdomain' ) . '</label><input id="email" name="email" type="text" value="" size="30" /></p>',
