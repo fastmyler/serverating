@@ -1,0 +1,340 @@
+.rating-container {
+    display: flex;
+    flex-direction: row-reverse; /* Stars visually align right-to-left */
+    justify-content: flex-start;
+    gap: 5px;
+}
+
+.rating-container input {
+    display: none; /* Hide the radio inputs */
+}
+
+.rating-container label {
+    font-size: 24px;
+    color: #ccc; /* Default star color */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+/* Highlight stars when a radio button is selected */
+.rating-container input:checked ~ label {
+    color: #6168ff; /* Highlighted star color */
+}
+
+/* Highlight stars on hover */
+.rating-container label:hover,
+.rating-container label:hover ~ label {
+    color: #6168ff; /* Hover star color */
+}
+
+.fa-solid, .fas {color: #6168ff;}
+
+.review-summary {
+    background-color: #6168ff; /* Button color */
+    color: white;
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-align: center;
+    width: 30%;
+}
+
+.review-summary:hover {
+    background-color: #5559cc; /* Slightly darker shade on hover */
+    transform: scale(1.05);
+}
+
+.review-summary:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+/* General Styles */
+.comment-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.comment {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 15px 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.comment:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Avatar Styles */
+.comment-avatar {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.comment-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Meta Info Styles */
+.comment-meta {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-author {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin-right: 10px;
+}
+
+.comment-email {
+    font-size: 14px;
+    color: #777;
+    margin-right: 10px;
+}
+
+.comment-url {
+    margin-right: auto;
+
+    font-size: 14px;
+    color: #0073e6;
+}
+
+.comment-url:hover {
+    text-decoration: underline;
+}
+
+/* Rating Styles */
+.comment-rating {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.comment-rating .fa-star  {
+    color: #6168ff;
+    margin-right: 5px;  
+    font-size: 20px;
+}
+.comment-rating .fa-star-half-stroke{
+    color: #6168ff;
+    margin-right: 5px;  
+    font-size: 20px;
+}
+
+.comment-rating .rating-number {
+    font-size: 32px;
+    color: #6168ff;
+    margin-right: 18px;
+    margin-left: 20px;
+}
+
+/* Comment Text */
+.comment-text {
+    font-size: 15px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.comment-text p {
+    font-size: 25px;
+    margin: 10px 0;
+}
+
+#star_rating {
+    width: 60%;
+    display: inline-block;
+    height: auto; /* Allow height to adjust dynamically */
+}
+
+#star_rating label {
+    font-size: 24px; /* Default font size */
+}
+
+#average_score {
+    height: auto; /* Allow dynamic height */
+    width: 30%;
+    text-align: center;
+    float: right;
+    display: inline-block;
+}
+
+.full-height-rating {
+    display: flex;
+    height: 100%;
+    font-size: 41px; /* Default font size */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1200px) {
+    #star_rating {
+        width: 70%; /* Increase width for smaller screens */
+    }
+
+    #star_rating label {
+        font-size: 20px; /* Slightly reduce font size */
+    }
+
+    #average_score {
+        width: 25%; /* Adjust proportion for score display */
+    }
+
+    .full-height-rating {
+        font-size: 35px; /* Reduce font size */
+    }
+}
+
+@media (max-width: 768px) {
+    #star_rating {
+        width: 100%; /* Full width for smaller devices */
+        height: auto;
+    }
+
+    #average_score {
+        width: 100%; /* Full width for smaller screens */
+        float: none; /* Remove float to stack elements */
+        margin-top: 10px;
+    }
+
+    .full-height-rating {
+        font-size: 28px; /* Further reduce font size */
+    }
+}
+
+@media (max-width: 480px) {
+    #star_rating label {
+        font-size: 18px; /* Further reduce font size for small screens */
+    }
+
+    .full-height-rating {
+        font-size: 24px; /* Adapt size for very small screens */
+    }
+}
+
+/* Main Title Section */
+.title_main {
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.title_main h6 {
+    font-size: 1rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+/* Wrapper container for the related posts */
+#listing_cont_related_wrapper {
+    width: 70%; /* Set the width to 70% */
+    margin: 0 auto; /* Center the container */
+}
+
+/* Container for related posts */
+#listing_cont_related {
+    display: inline-block;
+    width: 30%; /* Takes up the full width of the parent container */
+    text-align: center; /* Centering the posts */
+}
+
+#main_related_div{width: 80%;margin-left: 10%;margin-right: 10%;    text-align: center;
+}
+/* Individual post layout using inline-block */
+.related_post {
+    display: inline-block;
+    margin: 20px 1.5%; /* Margin between the posts */
+    vertical-align: top; /* Aligning posts in a row */
+    background: #fff; /* White background */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Light shadow for modern look */
+    overflow: hidden; /* Prevent content overflow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effects */
+}
+
+/* Styling for image container */
+#post_image_rev_related {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff; 
+    padding: 15px;/* Light grey background for posts without images */
+}
+
+/* Image styling */
+#post_image_rev_related img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover; /* Image fills the container */
+}
+
+/* Rating section */
+#post_raiting_list_related {
+    padding: 15px;
+    border-top: 1px solid #ddd; /* Divider between sections */
+}
+
+#post_raiting_list_related h6 {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Styling for links */
+.list_visit_related, .list_review_related {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px;
+    text-decoration: none;
+    background: #6168ff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.list_visit_related:hover, .list_review_related:hover {
+    color: #4CAF50; /* Green color on hover */
+}
+
+/* Hover effect for the post container */
+.related_post:hover {
+    transform: translateY(-10px); /* Slight lift on hover */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+
+/* Responsiveness for smaller screens */
+@media (max-width: 768px) {
+    .related_post {
+        width: 100%; /* 2 columns on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .related_post {
+        width: 100%; /* 1 column on small screens */
+    }
+}
