@@ -6,6 +6,7 @@ function top_3(){
         'post_status'         => 'publish',
         'posts_per_page'      => '3',
         'meta_key'       => 'top_sort',    
+        'post__not_in'           => [get_the_ID()],
         'orderby'        => 'meta_value_num', 
         'order'          => 'ASC',
     );
