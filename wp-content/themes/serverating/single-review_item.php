@@ -82,7 +82,7 @@
                             <ul class="sidebar_div_ul">
                             <li class="sidebar_div_il"><a href="#review_content" class="sidebar_scroll_link">Expert Review</a></li>
                             <li class="sidebar_div_il"><a href="#comments" class="sidebar_scroll_link">Customers Review</a></li>
-                            <li class="sidebar_div_il">Alternative Solutions</li>
+                            <li class="sidebar_div_il"><a href="#alternative_solutions" class="sidebar_scroll_link">Alternative Solutions</li>
                             </ul>
                             <a href="<?php echo_affiliate_url()?>" class="sidebar_visit">Visit <?php echo get_the_title()?></a>
                             <a class="sidenar_review">Write a review</a>
@@ -96,5 +96,10 @@
 
     </div>
     </div>
+</div>
+
+<div id="alternative_solutions">
+    <h2 class="review_h6" style="text-align: center; width:100%;">Alternative Solutions</h2>
+<?php do_shortcode('[top3]')?>
 </div>
 <?php get_footer(); ?>
