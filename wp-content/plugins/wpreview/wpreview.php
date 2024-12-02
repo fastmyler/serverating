@@ -4,6 +4,7 @@
  * Description: Complete Review Solution
  */
 
+ require('includes/cpt-review.php');
 
 
 
