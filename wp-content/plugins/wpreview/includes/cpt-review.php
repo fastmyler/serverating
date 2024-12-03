@@ -49,5 +49,39 @@ function cpt_review_create() {
 
 add_action( 'init', 'cpt_review_create' );
 
+function review_item_tags() {
+	// Add new taxonomy, NOT hierarchical (like tags)
+$labels = array(
+	'name'                       => _x( 'Hosting Categories', 'taxonomy general name', 'textdomain' ),
+	'singular_name'              => _x( 'Hosting Category', 'taxonomy singular name', 'textdomain' ),
+	'search_items'               => __( 'Search Categories', 'textdomain' ),
+	'popular_items'              => __( 'Popular Categories', 'textdomain' ),
+	'all_items'                  => __( 'All Categories', 'textdomain' ),
+	'parent_item'                => null,
+	'parent_item_colon'          => null,
+	'edit_item'                  => __( 'Edit Category', 'textdomain' ),
+	'update_item'                => __( 'Update Category', 'textdomain' ),
+	'add_new_item'               => __( 'Add New Category', 'textdomain' ),
+	'new_item_name'              => __( 'New Category Name', 'textdomain' ),
+	'separate_items_with_commas' => __( 'Separate categories with commas', 'textdomain' ),
+	'add_or_remove_items'        => __( 'Add or remove Category', 'textdomain' ),
+	'choose_from_most_used'      => __( 'Choose from the most used Categories', 'textdomain' ),
+	'not_found'                  => __( 'No Categories found.', 'textdomain' ),
+	'menu_name'                  => __( 'Hosting Categories', 'textdomain' ),
+);
 
+$args = array(
+	'hierarchical'          => false,
+	'labels'                => $labels,
+	'show_ui'               => true,
+	'show_admin_column'     => true,
+	'update_count_callback' => '_update_post_term_count',
+	'query_var'             => true,
+	'rewrite'               => array( 'slug' => 'category' ),
+);
+
+register_taxonomy( 'catgeory', 'review_item', $args );
+}
+
+add_action('init','review_item_tags')
 ?>

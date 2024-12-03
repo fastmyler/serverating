@@ -11,4 +11,8 @@
  require('includes/expert_score.php');
  require('includes/top_5.php');
  require('includes/top_3_related.php');
+ require('includes/compare-page.php');
+ require('includes/options.php');
+
+
 ?>

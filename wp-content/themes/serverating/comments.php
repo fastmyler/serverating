@@ -6,57 +6,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 ?>
 
-<?php
-// Custom callback to display the comment with author, email, and URL
-function custom_comment_callback( $comment, $args, $depth ) {
-    $GLOBALS['comment'] = $comment; ?>
-    
-    <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
-        <div class="comment-meta">
-            
-        <span class="comment-avatar">
-        <?php echo get_avatar(get_comment_author_email()); ?>
-        </span>
-
-            <span class="comment-author">
-                <?php echo get_comment_author(); ?>
-            </span>
-            </span>
-            <span class="comment-url">
-                <?php echo '('.get_comment_author_url().")"; ?>
-            </span>
-            <span class="comment-date"><?php comment_date()?></span>
-        </div>
-        
-        <div class="comment-text">
-            <?php comment_text(); ?>
-        </div>
-        
-        <div class="reply">
-            <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
-        </div>
-    </li>
-<?php }
-
-?>
-
 <div id="comments" class="comments-area container">
 
 <details>
   <summary style="float:right;">Write a Review</summary>
 
   <?php 
-        comment_form( array(
-            'title_reply' => __( 'Add Review', 'textdomain' ),
-            'label_submit' => __( 'Post Review', 'textdomain' ),
-            'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __( 'Your Honest Review', 'textdomain' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8"></textarea></p>',
-            'fields' => array(
-            'author' => '<p class="comment-form-author"><label for="author">' . __( 'Name', 'textdomain' ) . '</label><input id="author" name="author" type="text" value="" size="30" /></p>',
-            'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'textdomain' ) . '</label><input id="email" name="email" type="text" value="" size="30" /></p>',
-             'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'textdomain' ) . '</label><input id="url" name="url" type="text" value="" size="30" /></p>',
+comment_form( array(
+    'title_reply' => __( 'Add Review', 'textdomain' ),
+    'label_submit' => __( 'Post Review', 'textdomain' ),
+    'comment_field' => '<p class="comment-form-comment"><label for="comment">' . __( 'Your Honest Review', 'textdomain' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8"></textarea></p>',
+    'fields' => array(
+        'author' => '<p class="comment-form-author"><label for="author">' . __( 'Name', 'textdomain' ) . '</label><input id="author" name="author" type="text" value="" size="30" /></p>',
+        'email'  => '<p class="comment-form-email"><label for="email">' . __( 'Email', 'textdomain' ) . '</label><input id="email" name="email" type="text" value="" size="30" /></p>',
+        'url'    => '<p class="comment-form-url"><label for="url">' . __( 'Website', 'textdomain' ) . '</label><input id="url" name="url" type="text" value="" size="30" /></p>',
     ),
+    // Adding a nonce field for security
+    'comment_notes_after' => '<p class="comment-notes"><input type="hidden" name="comment_nonce" id="comment_nonce" value="' . wp_create_nonce('comment_nonce') . '" /></p>',
 ) );
 ?>
+
 </details>
 
     <?php if ( have_comments() ) : ?>

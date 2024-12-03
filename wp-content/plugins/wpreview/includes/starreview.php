@@ -172,7 +172,6 @@ function star_rating_meta_average($comment_id)
 // Calculates the average rating for the post 
 function star_rating_total_post_average($post_id){
 
-    $post_id = get_the_ID();
     $comments = get_comments(array('post_id' => $post_id,));
 
     $ratings = array();

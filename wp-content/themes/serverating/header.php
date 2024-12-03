@@ -18,7 +18,7 @@
 	<meta name="twitter:card" content="summary_large_image"> <!-- to have large image post format in Twitter -->
 
     <!-- Webpage Title -->
-	<title><?php wp_title(); ?></title>
+	<title><?php wp_title(); ?> | Expert Web Hosting Reviews</title>
     
     <!-- Styles -->
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -33,12 +33,12 @@
 
 	
 	<!-- Favicon  -->
-    <link rel="icon" href="images/favicon.png">
+  
 
     <?php wp_head(); ?>
 
 </head>
-<body <?php body_class(); ?> data-bs-spy="scroll" data-bs-target="#navbarExample">
+<body <?php body_class(); ?> data-post-id="<?php echo get_the_ID(); ?>"  data-bs-spy="scroll" data-bs-target="#navbarExample">
 
 
 

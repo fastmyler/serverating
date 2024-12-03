@@ -149,12 +149,17 @@ select {
 }
 
 #listing_cont {
-	box-shadow: 0 6px 8px -2px #c7c2c2;
+	box-shadow: -6px 6px 20px 4px #c6c8fd78;
+	;
 	margin-bottom: 30px;
 }
 
 #main_home {
 	margin-top: 25px;
+}
+
+.archive_featured_image_review{
+	
 }
 
 #myBtn {
@@ -1601,6 +1606,131 @@ select {
 
 .testimonial-text {
 	font-style: italic;
+}
+
+/* Main Container */
+.content_main_compare {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+/* Compare Section */
+.compare_section_compare {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* Compare Card */
+.compare_card_compare {
+    width: 48%;
+    background-color: #fff;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.compare_card_compare h2 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.compare_card_compare .post_details_compare p {
+    font-size: 14px;
+	text-align: center;
+    color: #555;
+}
+
+.compare_card_compare .post_details_compare p strong {
+    font-weight: bold;
+}
+
+#compare_image{text-align: center;}
+
+#compare_image img {
+	width: auto;
+	height: 100px;
+    padding: 25px;
+}
+
+/* VS Divider */
+.vs {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Content Section */
+.content_section_compare {
+    margin-top: 40px;
+}
+
+.content_section_compare h3 {
+    font-size: 22px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.post_content_compare {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .compare_section_compare {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .compare_card_compare {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    .vs {
+        margin-bottom: 20px;
+    }
+
+    .content_main_compare {
+        padding: 15px;
+    }
+
+    .content_section_compare h3 {
+        font-size: 20px;
+    }
+
+    .post_content_compare {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content_main_compare {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .compare_card_compare {
+        width: 100%;
+    }
+
+    .vs {
+        font-size: 20px;
+    }
 }
 
 @keyframes fadeDropdown {

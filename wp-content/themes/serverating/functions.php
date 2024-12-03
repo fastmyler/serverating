@@ -80,3 +80,42 @@ function related_posts_shortcode() {
 
 // Register the shortcode
 add_shortcode('related_posts', 'related_posts_shortcode');
+
+
+// Custom callback to display the comment with author, email, and URL
+function custom_comment_callback( $comment, $args, $depth ) {
+    $GLOBALS['comment'] = $comment; ?>
+    
+    <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
+        <div class="comment-meta">
+            
+        <span class="comment-avatar">
+        <?php 
+             $options = get_option( 'wpreview_custom_options' );
+             $avatar_url = isset( $options['wpreview_avatar'] ) ? esc_url( $options['wpreview_avatar'] ) : '';
+
+             echo "<img src=".$avatar_url.">"
+        ?>
+        </span>
+
+            <span class="comment-author">
+                <?php echo get_comment_author(); ?>
+            </span>
+            </span>
+            <span class="comment-url">
+                <?php echo '('.get_comment_author_url().")"; ?>
+            </span>
+            <span class="comment-date"><?php comment_date()?></span>
+        </div>
+        
+        <div class="comment-text">
+            <?php comment_text(); ?>
+        </div>
+        
+        <div class="reply">
+            <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
+        </div>
+    </li>
+<?php }
+
+?>

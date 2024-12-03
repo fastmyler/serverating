@@ -286,6 +286,7 @@
 #post_image_rev_related img {
     max-height: 100%;
     max-width: 100%;
+    width: 250px;
     object-fit: cover; /* Image fills the container */
 }
 
@@ -325,16 +326,102 @@
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
 }
 
+/* Main container styling */
+.content-area_archive_review {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
 
-/* Responsiveness for smaller screens */
+.container_archive_review {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Blog Title */
+.blog-title_archive_review {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
+/* Grid layout for the posts */
+.posts-grid_archive_review {
+    text-align: center;
+}
+
+.post-item_archive_review {
+    display: inline-block;
+    width: 30%; /* Each post takes up 30% width */
+    margin: 0 1.5%; /* 1.5% margin for spacing */
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    position: relative;
+    vertical-align: top;
+}
+
+.post-link_archive_review {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-featured-image_archive_review,
+.post-default-image_archive_review {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+}
+
+/* Post title styling */
+.post-title_archive_review {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: #333;
+    margin: 15px 0;
+}
+
+/* Post rating container */
+.post-rating-container_archive_review {
+    margin-top: 20px;
+}
+
+/* Rating section styling */
+.rating-section_archive_review {
+    margin-bottom: 10px;
+}
+
+.rating-section_archive_review h6 {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.rating-section_archive_review a {
+    color: #6168ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.rating-section_archive_review a:hover {
+    text-decoration: underline;
+}
+
+.archive_review_image{    height: 150px;
+}
+/* For responsive design */
 @media (max-width: 768px) {
-    .related_post {
-        width: 100%; /* 2 columns on medium screens */
+    .post-item_archive_review {
+        width: 48%; /* 2 items per row */
+        margin: 1% 1%; /* 1% margin for better spacing */
     }
 }
 
 @media (max-width: 480px) {
-    .related_post {
-        width: 100%; /* 1 column on small screens */
+    .post-item_archive_review {
+        width: 100%; /* 1 item per row */
+        margin: 1% 0; /* No side margins */
     }
 }
