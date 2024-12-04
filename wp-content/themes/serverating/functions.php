@@ -1,14 +1,21 @@
 <?php
-add_theme_support( 'post-thumbnails' );
+
+// Adding Supports
 add_theme_support( 'post-thumbnails' );
 add_theme_support('excerpt');
-
 remove_filter('comment_reply_link', 'comment_reply_link', 10, 2);
 
 
 // Enqueeue Styles and Scripts of the theme 
 add_action( 'wp_enqueue_scripts', 'serverating_enqueue' );
 function serverating_enqueue() {
+
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('ajax-show-more', get_stylesheet_directory_uri() . '/assets/js/ajax-show-more.js', array('jquery'), null, true);
+    wp_localize_script('ajax-show-more', 'ajax_show_more_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
+
     wp_enqueue_style( 'serverating_bootstrap', get_stylesheet_directory_uri() . '/assets/css/bootstrap.min.css', array(), '1.0.0' );
     wp_enqueue_style( 'serverating_fontawesome', get_stylesheet_directory_uri() . '/assets/css/fontawesome-all.min.css', array(), '1.0.0' );
     wp_enqueue_style( 'serverating_swiper', get_stylesheet_directory_uri() . '/assets/css/swiper.css', array(), '1.0.0' );
@@ -21,18 +28,41 @@ function serverating_enqueue() {
     wp_enqueue_script( 'serverating_custom_scripts', get_stylesheet_directory_uri() . '/assets/js/scripts.js', array(), '1.0.0', true );
 }
 
-/**
- * Add a sidebar.
- */
-function wpdocs_theme_slug_widgets_init() {
-	register_sidebar( array(
-		'name'          => __( 'primary', 'textdomain' ),
-		'id'            => 'primary',
-		'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'textdomain' ),
-	) );
-}
-add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init' );
+//Registering the SideBard so we can use it in the footer
+function add_footer_sidebar() {
 
+	register_sidebar(array(
+        'id'                    => 'sidebar-1',
+        'name'                  => 'Footer Widgets Left',
+        'before_widget'         => '<div id="%1$s" class="widget %2$s">',
+        'after_widget'          => '</div>',
+        'before_title'          => '<h2 class="widgettitle">',
+        'after_title'           => '</h2>',
+    ));
+    
+    register_sidebar(array(
+            'id'                    => 'sidebar-2',
+            'name'                  => 'Footer Widgets Center',
+            'before_widget'         => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'          => '</div>',
+            'before_title'          => '<h2 class="widgettitle">',
+            'after_title'           => '</h2>',
+        ));
+
+    register_sidebar(array(
+            'id'                => 'sidebar-3',
+            'name'              => 'Footer Widgets Right',
+            'before_widget'     => '<div id="%1$s" class="widget %2$s">',
+            'after_widget'      => '</div>',
+            'before_title'      => '<h2 class="widgettitle">',
+            'after_title'       => '</h2>',
+        ));
+
+}
+
+add_action( 'widgets_init', 'add_footer_sidebar' );
+
+//Registering the Navigation TOP MENU 
 function serverating_register_nav_menus() {
 
     register_nav_menu( 'Main', 'Primary Menu' );
@@ -40,6 +70,7 @@ function serverating_register_nav_menus() {
 
 add_action( 'after_setup_theme', 'serverating_register_nav_menus', 0 );
 
+// Related Blog posts via shortcode
 function related_posts_shortcode() {
     // Exclude the current post
     $current_post_id = get_the_ID();
@@ -57,7 +88,6 @@ function related_posts_shortcode() {
 
     if ($recent_posts->have_posts()) {
         echo '<div class="related_posts">';
-        echo '<h3 class="related_title">Related Posts</h3>';
         echo '<ul class="related_list">';
         while ($recent_posts->have_posts()) {
             $recent_posts->the_post();
@@ -116,6 +146,5 @@ function custom_comment_callback( $comment, $args, $depth ) {
             <?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
         </div>
     </li>
-<?php }
-
-?>
+<?php 
+}

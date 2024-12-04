@@ -171,7 +171,6 @@
     height: auto; /* Allow dynamic height */
     width: 30%;
     text-align: center;
-    float: right;
     display: inline-block;
 }
 
@@ -411,6 +410,59 @@
 
 .archive_review_image{    height: 150px;
 }
+
+/* Container styling */
+.show_compare_items {
+    text-align: center; /* Center align items */
+    margin: 0 auto;
+    width: 100%; /* Full width of the container */
+}
+
+/* Individual item styling */
+.compare_item_a {
+    display: inline-block; /* Inline-block for horizontal alignment */
+    width: 30%; /* Each item takes up 30% of the width */
+    margin: 1%; /* Small margin between items */
+    text-decoration: none; /* Remove underline from links */
+    vertical-align: top; /* Align items vertically */
+}
+
+/* Styling for the compare item */
+.compare_item {
+    border: 1px solid #ccc; /* Light border around items */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Padding inside items */
+    background-color: #f9f9f9; /* Background color */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Image styling */
+.compare_item_img {
+    max-width: 100%; /* Ensure the image fits inside the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 5px; /* Slightly rounded image corners */
+}
+
+/* Title styling */
+.compare_title {
+    font-size: 1.2rem; /* Adjust font size */
+    color: #333; /* Darker text color */
+    margin: 10px 0 0 0; /* Add space above the title */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .compare_item_a {
+        width: 100%; /* Two items per row on medium screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .compare_item_a {
+        width: 100%; /* Single item per row on small screens */
+    }
+}
+
 /* For responsive design */
 @media (max-width: 768px) {
     .post-item_archive_review {

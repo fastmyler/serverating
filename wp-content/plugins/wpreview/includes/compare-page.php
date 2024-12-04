@@ -120,3 +120,60 @@ function save_compare_providers_meta($post_id) {
     }
 }
 add_action('save_post', 'save_compare_providers_meta');
+
+function show_compare_items($post_per_page, $offset = 0) {
+    // Adjust the query to use the offset parameter
+    $args = array(
+        'post_type'      => 'compare_providers',
+        'post_status'    => 'publish',
+        'posts_per_page' => $post_per_page,
+        'orderby'        => 'date',
+        'order'          => 'ASC',
+        'offset'         => $offset, // Use the offset to load new posts each time
+    );
+
+    echo '<div class="show_compare_items">';
+
+    $the_query = new WP_Query($args);
+
+    if ($the_query->have_posts()) :
+        while ($the_query->have_posts()) : $the_query->the_post(); ?>
+            <a href="<?php echo get_permalink() ?>" class="compare_item_a">
+                <div class="compare_item">
+                    <?php
+                        if ( has_post_thumbnail() ) {
+                            $image_url = get_the_post_thumbnail_url( get_the_ID() ); 
+                            echo '<img class="compare_item_img" src="' . esc_url( $image_url ) . '" alt="' . esc_attr( get_the_title() ) . '">';
+                        } else {
+                            echo 'No Featured Image';
+                        }
+                    ?>
+                    <h2 class="compare_title"><?php echo get_the_title() ?></h2>
+                </div>
+            </a>
+        <?php endwhile;
+
+        wp_reset_postdata();
+    else:
+        echo '<p>No more posts to load.</p>'; // Handle if no more posts are available
+    endif;
+
+    echo '</div>';
+}
+
+// Enqueu Ajax for show more
+
+
+function load_more_compare_items() {
+    // Get the offset and posts_per_page from the AJAX request
+    $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
+    $post_per_page = isset($_POST['post_per_page']) ? intval($_POST['post_per_page']) : 3; // Default to 3 posts per page
+
+    // Call the show_compare_items function with the offset
+    show_compare_items($post_per_page, $offset);
+
+    wp_die(); // Required to terminate the request
+}
+
+add_action('wp_ajax_load_more_compare_items', 'load_more_compare_items');
+add_action('wp_ajax_nopriv_load_more_compare_items', 'load_more_compare_items');
