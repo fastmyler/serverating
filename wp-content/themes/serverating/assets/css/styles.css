@@ -955,14 +955,15 @@ select {
 }
 
 #load-more {
-    background-color: #006dad;  /* Blue background */
-    color: white;              /* White text */
-    border: none;              /* No border */
-    padding: 10px 20px;        /* Padding for spacing */
-    font-size: 16px;           /* Font size */
-    cursor: pointer;          /* Pointer cursor on hover */
-    border-radius: 5px;        /* Rounded corners */
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+	background-color: #0068a5;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    margin-top: 10px;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: background-color 0.3s ease;
 }
 
 #load-more:hover {

@@ -38,7 +38,8 @@
             </div> 
         </div> 
     </div> 
-    
+<h2 class="post_title">Best Hosting Providers</h2>
+
     <?php do_shortcode('[top3]')?>
 
     <?php get_footer(); ?>
