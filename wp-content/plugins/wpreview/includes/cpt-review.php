@@ -77,10 +77,10 @@ $args = array(
 	'show_admin_column'     => true,
 	'update_count_callback' => '_update_post_term_count',
 	'query_var'             => true,
-	'rewrite'               => array( 'slug' => 'category' ),
+	'rewrite'               => array( 'slug' => 'hosting-category' ),
 );
 
-register_taxonomy( 'catgeory', 'review_item', $args );
+register_taxonomy( 'hosting-catgeory', 'review_item', $args );
 }
 
 add_action('init','review_item_tags')

@@ -25,7 +25,6 @@ get_header(); ?>
 
                     <?php if ( 'review_item' === $post_type ) : ?>
                         <!-- Display for review_items -->
-                        <h2>Hosting Provider</h2>
                         <div class="search-result-review_item">
                              <div class="container" id="listing_cont">
                                 <div class="image_title_rating">
@@ -106,8 +105,13 @@ get_header(); ?>
             <?php endif; ?>
 
         <?php endif; ?>
+        
+        <h2 style="color: #006dad;text-align:center;">Best Hosting Providers December 2024</h2>
+                <?php echo do_shortcode('[top5]'); ?>
+
 
     </div>
 </div>
+
 
 <?php get_footer(); ?>

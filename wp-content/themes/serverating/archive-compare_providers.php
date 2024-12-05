@@ -6,7 +6,7 @@
 <div class="ex-basic-1 pt-5 pb-5">
     <div class="container">
         <div class="col-xl-10 offset-xl-1">
-            <h2 class="post_title">ServeRating's Blog</h2>
+        <h2 style="color: #006dad;text-align:center;">Compare Providers</h2>
         </div>
         <div class="archive_container">
             <?php if ( have_posts() ) : ?>    
@@ -24,10 +24,10 @@
                         <?php endif; ?>
                         <h2 class="archive_heading"><?php echo get_the_title(); ?><br></h2>
                         <h6><?php echo get_the_date( 'F j, Y' )?></h6>
-                        <p class="archive_excerpt"><?php echo get_the_excerpt();?></p>
 						</div>
 				</a>
                 <?php endwhile; ?>
+
             <?php else : ?>
                 <p>No posts found.</p>
             <?php endif; ?>

@@ -9,12 +9,11 @@
                             echo '<img class=sidebar_div_img  src="' . esc_url( $image_url ) . '" />';
                             ?>
                             <a href="<?php ?>" class="sidebar_visit">Visit <?php echo get_the_title()?></a>
-                            <a class="sidenar_review">Write a review</a>
                         </div>
                             <ul class="sidebar_div_ul">
-                                <li class="sidebar_div_il">Expert Review</li>
-                                <li class="sidebar_div_il">Customers Review</li>
-                                <li class="sidebar_div_il">Alternative Solutions</li>
+                                <li class="sidebar_div_il"><a href="#review_content" class="sidebar_scroll_link">Expert Review</a></li>
+                                <li class="sidebar_div_il"><a href="#comments" class="sidebar_scroll_link">Customers Review</a></li>
+                                <li class="sidebar_div_il"><a href="#alternative_solutions" class="sidebar_scroll_link">Alternative Solutions</a></li>
                             </ul>
                         </div>
 </div>
@@ -80,12 +79,19 @@
                             echo '<img class=sidebar_div_img  src="' . esc_url( $image_url ) . '" />';
                             ?>
                             <ul class="sidebar_div_ul">
+                            
                             <li class="sidebar_div_il"><a href="#review_content" class="sidebar_scroll_link">Expert Review</a></li>
                             <li class="sidebar_div_il"><a href="#comments" class="sidebar_scroll_link">Customers Review</a></li>
-                            <li class="sidebar_div_il"><a href="#alternative_solutions" class="sidebar_scroll_link">Alternative Solutions</li>
+                            <li class="sidebar_div_il"><a href="#alternative_solutions" class="sidebar_scroll_link">Alternative Solutions</a></li>
                             </ul>
+                            <div class="side_rat">
+                            <h6 style="color:#0073a1;">Expert's Score</h6>
+                            <span class="fa fa-star" style="color: #6168ff;"> </span><span><?php echo echo_expert_score()?></span>
+                            <h6 style="color:#0073a1;">Customer's Score</h6>
+                            <span class="fa fa-star" style="color: #6168ff;">  </span><span><?php star_rating_total_post_average(get_the_ID()); ?></span>
+                            </div>
+                            <br> 
                             <a href="<?php echo_affiliate_url()?>" class="sidebar_visit">Visit <?php echo get_the_title()?></a>
-                            <a class="sidenar_review">Write a review</a>
                         </div>
                         
                     </div> 

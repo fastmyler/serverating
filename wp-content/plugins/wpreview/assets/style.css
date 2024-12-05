@@ -532,6 +532,7 @@
     .compare_item_a {
         width: 100%; /* Two items per row on medium screens */
     }
+    #listing_cont_related{width: 100%;}
 }
 
 @media (max-width: 480px) {

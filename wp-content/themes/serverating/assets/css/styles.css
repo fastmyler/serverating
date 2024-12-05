@@ -886,6 +886,7 @@ select {
 	padding-top: 3rem;
 	position: relative;
 	text-align: center;
+	
 }
 
 .footer .decoration-city {
@@ -969,6 +970,78 @@ select {
 #load-more:hover {
     background-color: #005b8f; /* Darker blue on hover */
 }
+
+/* General form styles */
+.searchform {
+	width: 100%;
+    align-items: center;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+/* Label for screen reader */
+.screen-reader-text {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+/* Input field */
+.searchform input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.searchform input[type="text"]:focus {
+    border-color: #3498db;
+}
+
+.side_rat span{font-size: 40px;}
+
+/* Submit button */
+.searchform input[type="submit"] {
+    padding: 10px 20px;
+	width: 50%;
+	margin-left: 25%;
+	margin-right: 25%;
+	text-align: center;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.searchform input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 600px) {
+    .searchform {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .searchform input[type="text"] {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .searchform input[type="submit"] {
+        width: 100%;
+    }
+}
+
 
 .form-control-input, .form-control-select, .form-control-textarea {
 	background-color: #ffffff;
@@ -1885,6 +1958,9 @@ select {
 		padding: 10px;
 		width: 100%;
 		z-index: 2;
+		position: fixed;
+        bottom: 0px;
+
 	}
 
 	.post_title {
@@ -1920,7 +1996,7 @@ select {
 		margin-bottom: 10px;
 		margin-left: 3px;
 		margin-top: 8px;
-		width: 30%;
+		width: 45%;
 	}
 
 	.sidebar_div_in {
@@ -1943,11 +2019,10 @@ select {
 		color: #fff;
 		display: inline-block;
 		margin-left: 5%;
-		margin: 5px 0;
 		padding: 10px;
 		text-align: center;
 		text-decoration: none;
-		width: 24%;
+		width: 45%;
 	}
 
 	.sidebar_visit:hover, .sidenar_review:hover {

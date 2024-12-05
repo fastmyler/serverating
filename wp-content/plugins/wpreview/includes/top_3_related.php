@@ -57,7 +57,7 @@ function top_3(){
     endwhile;
     else : ?>
         <p>No posts found.</p>
-    <?php endif;
+    <?php endif; wp_reset_postdata();
     echo '</div>';
 }
 
