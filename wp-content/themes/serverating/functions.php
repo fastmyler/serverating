@@ -148,3 +148,12 @@ function custom_comment_callback( $comment, $args, $depth ) {
     </li>
 <?php 
 }
+
+
+function custom_search_template() {
+    if (is_search() && !is_admin()) {
+        include('templates/search.php');
+        exit;
+    }
+}
+add_action('template_redirect', 'custom_search_template');
