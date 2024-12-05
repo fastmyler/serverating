@@ -85,3 +85,82 @@ register_taxonomy( 'catgeory', 'review_item', $args );
 
 add_action('init','review_item_tags')
 ?>
+
+
+
+
+<?php
+function show_all(){
+
+	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
+
+    $args = array(
+        'post_type'           => 'review_item',
+        'post_status'         => 'publish',
+        'posts_per_page'      => '5',
+		'paged'          	  => $paged, 
+        'meta_key'       => 'expert_score',    
+        'orderby'        => 'meta_value_num', 
+        'order'          => 'DESC',
+    );
+
+
+    $the_query = new WP_Query( $args );
+
+    if ( $the_query->have_posts() ) :
+        while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+            <div class="container" id="listing_cont">
+                <div class="image_title_rating">
+                    <div id="post_image_rev">
+                        <?php
+                        if ( has_post_thumbnail() ) {
+                            $image_url = get_the_post_thumbnail_url( get_the_ID() ); 
+                            echo '<img src="' . esc_url( $image_url ) . '" alt="' . esc_attr( get_the_title() ) . '">';
+                        } else {
+                            echo 'No Featured Image';
+                        }
+                        ?>
+                    </div>
+
+                    <div id="post_raiting_list">
+                        <h6>Customer Reviews Posted</h6>
+                        <?php echo comments_number('No Reviews', '1 Review', '% Reviews') ?>
+                        <h6>Lowest Price</h6>
+                        <?php echo echo_lowest_price()?>
+                    </div>
+                    <div id="post_raiting_list">
+                        <h6>Customer's Score</h6>
+                        <span class="fa fa-star" style="color: #6168ff;"></span>
+                        <?php star_rating_total_post_average( get_the_ID() ); ?>
+                        <h6>Expert's Score</h6>
+                        <span class="fa fa-star" style="color: #6168ff;"></span>
+                        <?php echo echo_expert_score(); ?>
+                    </div>
+                    <div id="post_raiting_list">
+                    <a href="<?php echo_affiliate_url()?>" class="list_visit" >Visit <?php echo get_the_title()?></a>
+                    <a class="list_review" href="<?php echo get_permalink()?>">Reviews</a>
+                    </div>
+                </div>
+            </div>
+        <?php 
+    endwhile; ?>
+	<div class=pagination_all>
+	<div class="pagination">
+	<?php
+	echo paginate_links(array(
+		'total'   => $the_query->max_num_pages,
+		'current' => $paged,
+		'format'  => '?paged=%#%',
+		'show_all' => false,
+		'type'    => 'list',
+		'prev_text' => __('« Previous'),
+		'next_text' => __('Next »'),
+	));
+	?>
+	</div>
+	</div>
+<?php
+    endif;
+}
+
+add_shortcode('show_all_shortcode','show_all');

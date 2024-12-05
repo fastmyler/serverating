@@ -449,6 +449,72 @@
     margin: 10px 0 0 0; /* Add space above the title */
 }
 
+/* Container for the pagination */
+.pagination {
+    text-align: center; /* Center align the pagination */
+    margin: 20px 0; /* Add spacing above and below */
+}
+
+.pagination_all {display: block;width: 100%;text-align: center;}
+/* Pagination list */
+.pagination .page-numbers {
+    display: flex; /* Use flexbox for single-row alignment */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Align items vertically */
+    gap: 5px; /* Space between pagination items */
+    padding: 0; /* Remove extra padding from ul */
+    list-style: none; /* Remove bullet points */
+}
+
+/* Pagination items */
+.pagination .page-numbers li {
+    display: inline-block; /* Ensure each list item is inline */
+    margin: 0; /* No margin around the items */
+}
+
+/* Pagination links */
+.pagination .page-numbers a,
+.pagination .page-numbers span {
+    display: inline-block; /* Keep links and spans inline */
+    padding: 10px 15px; /* Padding for clickable area */
+    color: #6168ff; /* Text color */
+    background-color: #f9f9f9; /* Background color */
+    border: 1px solid #dcdcdc; /* Border for items */
+    border-radius: 5px; /* Rounded corners */
+    text-decoration: none; /* Remove underline from links */
+    font-size: 14px; /* Font size */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+/* Current page styling */
+.pagination .page-numbers .current {
+    background-color: #6168ff; /* Active background color */
+    color: #fff; /* Active text color */
+    border-color: #6168ff; /* Match border with background */
+    font-weight: bold; /* Emphasize the current page */
+}
+
+/* Hover effect for links */
+.pagination .page-numbers a:hover {
+    background-color: #6168ff; /* Hover background color */
+    color: #fff; /* Hover text color */
+    border-color: #6168ff; /* Match the border on hover */
+}
+
+/* Next and Previous link styling */
+.pagination .page-numbers .next {
+    font-weight: bold; /* Highlight the next link */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .pagination .page-numbers a,
+    .pagination .page-numbers span {
+        padding: 8px 10px; /* Reduce padding for smaller screens */
+        font-size: 12px; /* Smaller font size */
+    }
+}
+
 /* Responsive design */
 @media (max-width: 768px) {
     .compare_item_a {

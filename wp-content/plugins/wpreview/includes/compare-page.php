@@ -121,15 +121,15 @@ function save_compare_providers_meta($post_id) {
 }
 add_action('save_post', 'save_compare_providers_meta');
 
+// Function that shows 3 posts // Offset is required here to work with Ajax. It shows how many posts to skip. 
 function show_compare_items($post_per_page, $offset = 0) {
-    // Adjust the query to use the offset parameter
     $args = array(
         'post_type'      => 'compare_providers',
         'post_status'    => 'publish',
         'posts_per_page' => $post_per_page,
         'orderby'        => 'date',
         'order'          => 'ASC',
-        'offset'         => $offset, // Use the offset to load new posts each time
+        'offset'         => $offset, 
     );
 
     echo '<div class="show_compare_items">';
@@ -161,9 +161,20 @@ function show_compare_items($post_per_page, $offset = 0) {
     echo '</div>';
 }
 
+
 // Enqueu Ajax for show more
+function enqueue_custom_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('ajax-show-more', plugins_url('../assets/ajax-show-more.js', __FILE__), array('jquery'), null, true);
+    
+    // Add localized data for the AJAX URL
+    wp_localize_script('ajax-show-more', 'ajax_show_more_params', array(
+        'ajax_url' => admin_url('admin-ajax.php'),
+    ));
+}
+add_action('wp_enqueue_scripts', 'enqueue_custom_scripts');
 
-
+//Ajax functinality 
 function load_more_compare_items() {
     // Get the offset and posts_per_page from the AJAX request
     $offset = isset($_POST['offset']) ? intval($_POST['offset']) : 0;
