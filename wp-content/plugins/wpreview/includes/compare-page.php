@@ -1,4 +1,4 @@
-<?php
+<?php // New custom Type to compare 2 providers
 
 function compare_providers_create() {
 	$labels = array(
@@ -48,7 +48,7 @@ function compare_providers_create() {
 
 add_action( 'init', 'compare_providers_create' );
 
-
+// Creating a metabox so the customer can choose 2 providers // Using callback compare_providers_meta_box_callback
 function compare_providers_meta_box() {
     add_meta_box(
         'compare_providers_meta', 

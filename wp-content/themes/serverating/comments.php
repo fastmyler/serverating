@@ -53,12 +53,13 @@ comment_form( array(
                     'style'       => 'ol',
                     'short_ping'  => true,
                     'avatar_size' => 60,
+                    'status'  => 'approve',
                     'callback'    => 'custom_comment_callback',  // Specify your custom callback function // can be found in the functions 
                     ) );
             ?>
         </ol>
         
-        <?php the_comments_navigation(); ?> // navigation 
+        <?php the_comments_navigation(); // navigation?>  
 
     <?php endif; // have_comments() ?>
 

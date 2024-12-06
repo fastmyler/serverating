@@ -1,4 +1,4 @@
-<?php 
+<?php // Adding a metabox for lowest_price_metabox 
 
 // Add the metabox
 function lowest_price_metabox() {

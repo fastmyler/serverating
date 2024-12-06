@@ -89,7 +89,7 @@ add_action('init','review_item_tags')
 
 
 
-<?php
+<?php // Show all the providers 
 function show_all(){
 
 	$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;

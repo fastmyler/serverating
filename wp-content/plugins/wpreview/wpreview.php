@@ -14,7 +14,4 @@
  require('includes/compare-page.php');
  require('includes/options.php');
 
-
-
-
 ?>
