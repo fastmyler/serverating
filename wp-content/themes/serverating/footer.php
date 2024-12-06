@@ -1,12 +1,8 @@
-   <!-- Footer -->
-   <div class="footer bg-gray">
-
-                
+   <!-- Sidebar Dynamic Footer -->
+   <div class="footer bg-gray">             
             <?php get_sidebar('footer'); ?>
+    </div> 
 
-
-    </div> <!-- end of footer -->  
-    <!-- end of footer -->
 
 
 
@@ -16,7 +12,6 @@
     </button>
     <!-- end of back to top button -->
     	
-    <!-- Scripts -->
     
     <?php wp_footer(); ?>
 

@@ -1,6 +1,9 @@
-<?php get_header(); ?>    
+ <!-- Compare 2 Providers template -->
+<?php get_header(); ?>   
+
 
 <?php 
+// generating variables for easier use in the template and also testings 
 
 $post_1 = get_post_meta(get_the_ID(),'_compare_post_1',true);
 $post_2 = get_post_meta(get_the_ID(),'_compare_post_2',true);

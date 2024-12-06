@@ -1039,6 +1039,8 @@ select {
 
     .searchform input[type="submit"] {
         width: 100%;
+		margin-right:0px;
+		margin-left: 0px;
     }
 }
 
@@ -1804,6 +1806,7 @@ select {
     color: #333;
     margin-bottom: 10px;
 }
+.post_details_compare {text-align: center;}
 
 .compare_card_compare .post_details_compare p {
     font-size: 14px;
@@ -1934,6 +1937,19 @@ select {
 		max-height: 300px;
 	}
 
+	.menu-item a {
+		color: #5e6576;
+        padding-bottom: 0.625rem;
+        padding-left: .5rem;
+        padding-right: .5rem;
+        padding-top: 0.625rem;
+        font-size: 25px;
+        display: block;
+        text-decoration: none;
+        transition: all 0.2s ease;
+        margin-top: 20px;
+	}
+
 	.archive_featured_image {
 		height: 180px;
 	}
@@ -2034,6 +2050,8 @@ select {
 	.archive_container {
 		grid-template-columns: 1fr;
 	}
+
+
 }
 
 @media screen and (max-width: 600px) {
@@ -2197,13 +2215,11 @@ select {
 	.archive_container {
 		grid-template-columns: repeat(2,1fr);
 	}
+	
 }
 
 @media screen and (max-width: 992px) {
-	.menu-item-type-custom {
-		font-size: 24px;
-		margin-top: 25px;
-	}
+
 
 	.navbar-nav-scroll {
 		overflow-y: unset !important;
@@ -2392,6 +2408,10 @@ select {
 		margin-right: 3rem;
 		vertical-align: top;
 	}
+
+	.archive_container a{
+		width: 100%;	}
+
 
 	.counter .counter-container {
 		text-align: left;

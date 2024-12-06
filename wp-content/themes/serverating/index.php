@@ -1,8 +1,6 @@
-<?php get_header(); ?>    
+<?php //Index page where the blogs are displayed ?>
 
-
-
-
+<?php get_header(); ?>   
 <div class="ex-basic-1 pt-5 pb-5">
     <div class="container">
         <div class="col-xl-10 offset-xl-1">

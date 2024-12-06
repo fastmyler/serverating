@@ -1,3 +1,4 @@
+     <!-- Sidebar Footer -->
     <div class="container">
         <div class="row">
 
@@ -19,5 +20,5 @@
 
             </div>
 
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
+        </div> 
+    </div> 

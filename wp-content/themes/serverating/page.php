@@ -1,3 +1,5 @@
+ <!-- Super Basic Page.PHP Template // Most of the Pages are coming with template -->
+
 <?php get_header(); ?>    
 
     <!-- Image -->

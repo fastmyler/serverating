@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <details>
   <summary style="float:right;">Write a Review</summary>
 
-  <?php 
+  <?php //Write your comment Section // TODO make this to work with AJAX 
 comment_form( array(
     'title_reply' => __( 'Add Review', 'textdomain' ),
     'label_submit' => __( 'Post Review', 'textdomain' ),
@@ -28,7 +28,7 @@ comment_form( array(
 
 </details>
 
-    <?php if ( have_comments() ) : ?>
+    <?php if ( have_comments() ) : // Show Comments?>
         <h2 class="review_h6">
         
     <?php
@@ -40,8 +40,8 @@ comment_form( array(
             'comments title',
             'textdomain'
         ),
-        get_the_title(), // %1$s: The post title
-        number_format_i18n(get_comments_number()) // %2$s: The number of comments
+        get_the_title(), //  The post title
+        number_format_i18n(get_comments_number()) //  The number of comments
     );
     ?>
         </h2>
@@ -53,12 +53,12 @@ comment_form( array(
                     'style'       => 'ol',
                     'short_ping'  => true,
                     'avatar_size' => 60,
-                    'callback'    => 'custom_comment_callback',  // Specify your custom callback function
+                    'callback'    => 'custom_comment_callback',  // Specify your custom callback function // can be found in the functions 
                     ) );
             ?>
         </ol>
         
-        <?php the_comments_navigation(); ?>
+        <?php the_comments_navigation(); ?> // navigation 
 
     <?php endif; // have_comments() ?>
 

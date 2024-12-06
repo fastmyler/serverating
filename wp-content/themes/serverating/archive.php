@@ -1,3 +1,6 @@
+<!-- Archive.php template  -->
+
+
 <?php get_header(); ?>    
 
 
