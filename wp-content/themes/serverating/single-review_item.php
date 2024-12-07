@@ -9,13 +9,9 @@
             esc_url($image_url) .
             '" />';
         ?>
-            <a href="<?php  ?>" class="sidebar_visit">Visit <?php echo get_the_title(); ?></a>
+            <a href="<?php echo_affiliate_url(); ?>" class="sidebar_visit">Visit</a>
         </div>
-            <ul class="sidebar_div_ul">
-                <li class="sidebar_div_il"><a href="#review_content" class="sidebar_scroll_link">Expert Review</a></li>
-                <li class="sidebar_div_il"><a href="#comments" class="sidebar_scroll_link">Customers Review</a></li>
-                <li class="sidebar_div_il"><a href="#alternative_solutions" class="sidebar_scroll_link">Alternative Solutions</a></li>
-            </ul>
+           
         </div>
 </div>
 
