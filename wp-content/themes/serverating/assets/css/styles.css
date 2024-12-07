@@ -25,6 +25,12 @@ body, p {
 	font-weight: 200;
 }
 
+#rev-back {
+	background-image: url(http://softuni.sunsystembg.com/wp-content/themes/serverating/assets/images/invitation-background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
 
 .related_posts {
     margin: 30px 0;
@@ -60,6 +66,8 @@ body, p {
 	font-size: 1em;
 	color: #333;
   }
+
+  
   
   /* Hover effect for rows */
   .pricing-table tbody tr:hover {
@@ -327,6 +335,7 @@ select {
 #post_image_rev {
 	align-items: center;
 	border-radius: 10px;
+	background: white;
 	box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 	display: flex;
 	height: 150px;
@@ -358,6 +367,7 @@ select {
 #post_raiting_single {
 	border-left: 1.5px solid gray;
 	font-size: 42px;
+	color: white;
 	margin-left: auto;
 	padding: 27px;
 }
@@ -1910,6 +1920,9 @@ select {
         align-items: center;
     }
 
+	#post_image_rev {width: 100%;
+        box-shadow: none;}
+
     .compare_card_compare {
         width: 80%;
         margin-bottom: 20px;
@@ -2141,12 +2154,6 @@ select {
 		flex-direction: column;
 	}
 
-	#post_image_rev {
-		box-shadow: none;
-		height: 120px;
-		width: 100%;
-	}
-
 	#post_raiting_list {
 		border-left: none;
 		border-top: 1.5px solid gray;
@@ -2166,7 +2173,7 @@ select {
 		border-top: 1px solid gray;
 		margin: 10px 0 0 0;
 		padding: 15px 0;
-		text-align: left;
+		text-align: center;
 		width: 100%;
 	}
 

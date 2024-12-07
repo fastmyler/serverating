@@ -23,7 +23,7 @@
 <div class="main_conteiner_single">
     <div class="main_content_single">
         <!-- Image -->
-        <div class="ex-basic-1 pt-5 pb-5">
+        <div class="ex-basic-1 pt-5 pb-5" id="rev-back">
             <div class="container" id="review_content">
                 <div class="image_title_rating">
                     <div id="post_image_rev">
@@ -37,17 +37,17 @@
                         } ?>
                     </div>
                     <div id="post_raiting_single">
-                    <h6>Lowest Price</h6>
+                    <h6 style="color:white;">Lowest Price</h6>
                     <?php echo echo_lowest_price(); ?>
                     </div>
                     <div id="post_raiting_single">
-                    <h6>Customer's Score</h6>
-                    <span class="fa fa-star" style="color: #6168ff;"></span>
+                    <h6 style="color:white;">Customer's Score</h6>
+                    <span class="fa fa-star" style="color: white;"></span>
                     <?php star_rating_total_post_average(get_the_ID()); ?>
                     </div>
                     <div id="post_raiting_single">
-                    <h6>Expert's Score</h6>
-                    <span class="fa fa-star" style="color: #6168ff;"></span>
+                    <h6 style="color:white;">Expert's Score</h6>
+                    <span class="fa fa-star" style="color: white;"></span>
                     <?php echo echo_expert_score(); ?>
                     </div>
 
